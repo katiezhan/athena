@@ -14,7 +14,7 @@ Date: April 3, 2019
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body style="overflow-x:hidden;">
     <!-- Nav Bar -->
     <div class="row" style="background-color: #048D98; margin:0; height: 30%; width:100%; top:0;">
       <div class="navbar-container"> <!-- Logo + Title -->
@@ -38,7 +38,7 @@ Date: April 3, 2019
     </div>
 
     <!-- Webpage body -->
-    <div class="container-fluid ">
+    <div class="webpage-container container-fluid">
       <div>
           <img class="center" src="public/athenawebicon.png" style="width:9%; height:9%; text-align: center; padding-top: 2%;" >
       </div>
@@ -50,20 +50,35 @@ Date: April 3, 2019
       </div>
 
       <!-- Gray Box -->
-      <div class="center" style="width:100%; margin-bottom:0; background-color: #D8D8D8;">
+      <div class="gray-box center" style="position: relative; height:400px; margin:0 auto; margin-top:3%; background-color: #f3f3f3;">
+
+        <div class="outline-box" style="margin-left: 15%; margin-top: 2%; height:200px; width: 30%; border: 2px solid #048D98; ">
+        </div>
+
+        <div class="outline-box" style="margin-right: 15%; margin-top: 2%; height:200px; width: 30%; border: 2px solid #048D98; ">
+          </div>
+
       </div>
+
+
     </div>
 
-  
   </body>
 
   <style>
+
 
     .navbar-container {
       padding: 1%;
       color:#ffffff;
       font-family:roboto;
       position: relative;
+    }
+
+    .webpage-container {
+      position: relative;
+      padding:0;
+      margin:0;
     }
 
     .vertical-center {
@@ -79,7 +94,6 @@ Date: April 3, 2019
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 50%;
     }
 
   </style>
