@@ -3,11 +3,11 @@ import './App.css';
 import firebase, { auth, provider } from './fire'
 
 class App extends Component {
-constructor(props){
-  super(props)
-  this.state = {answerOne:""}
-    this.handleQuestionOne = this.handleQuestionOne.bind(this)
-}
+  constructor(props){
+    super(props)
+    this.state = {answerOne:""}
+      this.handleQuestionOne = this.handleQuestionOne.bind(this)
+  }
 
   handleQuestionOne(e){
     this.setState({answerOne: e.target.value})
