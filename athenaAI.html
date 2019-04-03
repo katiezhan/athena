@@ -1,3 +1,8 @@
+<!--
+File name: athenaAI.html
+Date: April 3, 2019
+-->
+
 <!DOCTYPE HTML>
 
   <head>
@@ -10,11 +15,10 @@
   </head>
 
   <body>
-    <div class="row" style="background-color: #048D98; height: 80%; width:100%; top:0;">
-
-      <!-- Logo + Title -->
-      <div class="container col-md-4" style="padding: 2%; color:#ffffff; font-family:roboto;">
-        <img src="logobright.png" style="width:12%; height:12%;"/>
+    <!-- Nav Bar -->
+    <div class="row" style="background-color: #048D98; margin:0; height: 60%; width:100%; top:0;">
+      <div class="navbar-container col-md-4"> <!-- Logo + Title -->
+        <img src="public/athenawebicon.png" style="width:17%; height:17%;"/>
           <div class="vertical-center" style="font-size: 25px;">
             AthenaAI
             <br>
@@ -23,12 +27,20 @@
             </div>
           </div>
       </div>
-
-      <!-- Nav Bar Items -->
-      <div class="container" style="padding-left:5%; color:#ffffff; font-family:roboto;">
-        <div class="vertical-center" style="font-size: 15px;">
-          Learn More
+      <div class="container" style="color:#ffffff; font-family:roboto;"> <!-- Nav Bar Items -->
+        <div id="learnmoreBTN" class="vertical-center" style="padding-left:5%; font-size: 18px;">
+          Learn More <!-- Make Button -->
         </div>
+        <div id="employersBTN" class="vertical-center" style="padding-left:20%; font-size: 18px;">
+          Employers <!-- Make Button -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Webpage body -->
+    <div class="container-fluid">
+      <div class="center-align" style="color:#048D98; font-family:roboto; font-size: 18px;">
+        Welcome to AthenaAI Student, your interview chatbot. Select a chatbot option to start.
       </div>
     </div>
   </body>
@@ -39,13 +51,20 @@
       position: relative;
     }
 
+    .navbar-container {
+      padding: 1%;
+      color:#ffffff;
+      font-family:roboto;
+    }
+
     .vertical-center {
       margin: 0;
-      margin-left: 10%;
+      margin-left: 14%;
       position: absolute;
       top: 50%;
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
     }
+
   </style>
 <html>
