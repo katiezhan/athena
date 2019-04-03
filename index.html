@@ -28,6 +28,13 @@
           p = document.createElement('p');
           words.appendChild(p);
         }
+
+        // Use the variable "transcript" for text analyzing
+
+        //Example:
+        //if (transcript.includes('hello')){
+        //  console.log("You said hello!");
+        //}
     });
     recognition.addEventListener('end', recognition.start);
     recognition.start();
