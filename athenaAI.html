@@ -1,51 +1,114 @@
+<!--
+File name: athenaAI.html
+Date: April 3, 2019
+-->
+
 <!DOCTYPE HTML>
 
   <head>
     <title>Athena AI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
-    <div class="row" style="background-color: #048D98; height: 80%; width:100%; top:0;">
-
-      <!-- Logo + Title -->
-      <div class="container col-md-4" style="padding: 2%; color:#ffffff; font-family:roboto;">
-        <img src="logobright.png" style="width:12%; height:12%;"/>
-          <div class="vertical-center" style="font-size: 25px;">
-            AthenaAI
-            <br>
-            <div style="font-size: 13px;">
-              Student
-            </div>
+  <body style="overflow-x:hidden;">
+    <!-- Nav Bar -->
+    <div class="navigationbar row">
+      <div class="navbar-container"> <!-- Logo + Title -->
+        <div float="left">
+          <img src="public/logobright.png" style="width:4%; height:4%;" align="left">
+        </div>
+        <div style="font-size: 25px; padding-left:5%;" style="float:left;">
+          AthenaAI
+          <br>
+          <div style="font-size: 13px;">
+            Student
           </div>
-      </div>
-
-      <!-- Nav Bar Items -->
-      <div class="container" style="padding-left:5%; color:#ffffff; font-family:roboto;">
-        <div class="vertical-center" style="font-size: 15px;">
-          Learn More
+        </div>
+        <div id="learnmoreBTN" class="vertical-center learnmoreBTN">
+          Learn More <!-- Make Button -->
+        </div>
+        <div id="employersBTN" class="vertical-center employersBTN">
+          Employers <!-- Make Button -->
         </div>
       </div>
     </div>
+
+    <!-- Webpage body -->
+    <div class="webpage-container container-fluid">
+      <div style="text-align:left; color:#048D98; font-family:roboto; font-size: 32px; padding-top:3%; float:left; padding-left: 2%;"  style="float:left;">
+        Digital Chatbot
+        <br>
+        <div style="text-align: left; color:#048D98; font-family:roboto; font-size: 15px; padding-top:2%; float:left;"  style="float:left;">
+          Practice technical interview skills with our Digital Chatbot. Type your answers in the text box and receive a score at the end of your session.
+        </div>
+      </div>
+
+      <!-- Box -->
+      <div class="center row" style="position: relative; height:500px; margin: 2%; margin-top:10%; border: 2px solid #048D98; ">
+        <div>
+            <img src="public/athenawebicon.png" style="width:4%; height:4%; padding: 1%;" align="right" >
+        </div>
+      </div>
+
+
+    </div>
+
   </body>
 
   <style>
 
-    .container {
+    #learnmoreBTN {
+      color:#ffffff; 
+      font-family:roboto; 
+      font-size: 18px;
+      padding-left:10%;
+    }
+
+    #employersBTN {
+      font-size: 18px; 
+      padding-left: 20%;
+    }
+    
+    .navigationbar {
+      background-color: #048D98; 
+      margin:0; 
+      height: 30%; 
+      width:100%; 
+      top:0;
+    }
+
+    .navbar-container {
+      padding: 1%;
+      color:#ffffff;
+      font-family:roboto;
       position: relative;
+    }
+
+    .webpage-container {
+      position: relative;
+      padding:0;
+      margin:0;
     }
 
     .vertical-center {
       margin: 0;
-      margin-left: 10%;
+      margin-left: 14%;
       position: absolute;
       top: 50%;
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
     }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   </style>
 <html>
