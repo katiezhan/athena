@@ -9,6 +9,7 @@ Date: April 3, 2019
     <title>Athena AI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -16,7 +17,7 @@ Date: April 3, 2019
 
   <body style="overflow-x:hidden;">
     <!-- Nav Bar -->
-    <div class="row" style="background-color: #048D98; margin:0; height: 30%; width:100%; top:0;">
+    <div class="navigationbar row">
       <div class="navbar-container"> <!-- Logo + Title -->
         <div float="left">
           <img src="public/logobright.png" style="width:4%; height:4%;" align="left">
@@ -28,10 +29,10 @@ Date: April 3, 2019
             Student
           </div>
         </div>
-        <div id="learnmoreBTN" class="vertical-center" style="color:#ffffff; font-family:roboto; font-size: 18px; padding-left:10%;">
+        <div id="learnmoreBTN" class="vertical-center learnmoreBTN">
           Learn More <!-- Make Button -->
         </div>
-        <div id="employersBTN" class="vertical-center" style=" font-size: 18px; padding-left: 20%;">
+        <div id="employersBTN" class="vertical-center employersBTN">
           Employers <!-- Make Button -->
         </div>
       </div>
@@ -39,25 +40,19 @@ Date: April 3, 2019
 
     <!-- Webpage body -->
     <div class="webpage-container container-fluid">
-      <div>
-          <img class="center" src="public/athenawebicon.png" style="width:9%; height:9%; text-align: center; padding-top: 2%;" >
-      </div>
-      <div style="text-align: center; color:#048D98; font-family:roboto; font-size: 30px;">
-          AthenaAI
+      <div style="text-align:left; color:#048D98; font-family:roboto; font-size: 32px; padding-top:3%; float:left; padding-left: 2%;"  style="float:left;">
+        Digital Chatbot
+        <br>
+        <div style="text-align: left; color:#048D98; font-family:roboto; font-size: 15px; padding-top:2%; float:left;"  style="float:left;">
+          Practice technical interview skills with our Digital Chatbot. Type your answers in the text box and receive a score at the end of your session.
         </div>
-      <div style="text-align: center; color:#048D98; font-family:roboto; font-size: 15px; padding-top:1%;">
-        Welcome to AthenaAI Student, your interview chatbot. Select a chatbot option to start.
       </div>
 
-      <!-- Gray Box -->
-      <div class="gray-box center" style="position: relative; height:400px; margin:0 auto; margin-top:3%; background-color: #f3f3f3;">
-
-        <div class="outline-box" style="margin-left: 15%; margin-top: 2%; height:200px; width: 30%; border: 2px solid #048D98; ">
+      <!-- Box -->
+      <div class="center row" style="position: relative; height:500px; margin: 2%; margin-top:10%; border: 2px solid #048D98; ">
+        <div>
+            <img src="public/athenawebicon.png" style="width:4%; height:4%; padding: 1%;" align="right" >
         </div>
-
-        <div class="outline-box" style="margin-right: 15%; margin-top: 2%; height:200px; width: 30%; border: 2px solid #048D98; ">
-          </div>
-
       </div>
 
 
@@ -67,6 +62,25 @@ Date: April 3, 2019
 
   <style>
 
+    #learnmoreBTN {
+      color:#ffffff; 
+      font-family:roboto; 
+      font-size: 18px;
+      padding-left:10%;
+    }
+
+    #employersBTN {
+      font-size: 18px; 
+      padding-left: 20%;
+    }
+    
+    .navigationbar {
+      background-color: #048D98; 
+      margin:0; 
+      height: 30%; 
+      width:100%; 
+      top:0;
+    }
 
     .navbar-container {
       padding: 1%;

@@ -3,14 +3,14 @@ import './App.css';
 import firebase, { auth, provider } from './fire'
 
 class App extends Component {
-constructor(props){
-  super(props)
-  this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false}
-    this.handleQuestionOne = this.handleQuestionOne.bind(this)
-    this.handleSubmitOne = this.handleSubmitOne.bind(this)
-    this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
-    this.handleSubmitTwo = this.handleSubmitTwo.bind(this)
-}   
+  constructor(props){
+    super(props)
+    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false}
+      this.handleQuestionOne = this.handleQuestionOne.bind(this)
+      this.handleSubmitOne = this.handleSubmitOne.bind(this)
+      this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
+      this.handleSubmitTwo = this.handleSubmitTwo.bind(this)
+  }   
 
   handleQuestionOne(e){
     this.setState({answerOne: e.target.value})
