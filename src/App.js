@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase, { auth, provider } from './fire';
 import { getKeyPhrases } from './textapi';
-import { Chart } from "react-charts";
 
 class App extends Component {
   constructor(props){
@@ -134,23 +133,6 @@ class App extends Component {
                   <div>
                     Thank you! 
                     Here are your results:
-                    <Chart
-                    data={[
-                      {
-                        label: "Series 1",
-                        data: [[1, this.state.markOne], [2, this.state.markTwo], [3, this.state.markThree]]
-                      }
-                    ]}
-                    axes={[
-                      { primary: true, type: "linear", position: "bottom"},
-                      { type: "linear", position: "left"}
-                    ]}
-                    style={{
-                      width: "50%",
-                      height: "300px"
-                    }}
-                    />
-
                   </div>
                  }
               </div>
