@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase, { auth, provider } from './fire'
+import firebase, { auth, provider } from './fire';
+import { getKeyPhrases } from './textapi';
 
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, answerThree:"", submitThree:false}
+    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0, solutionTwo:["civil", "respect", "open-minded"], markTwo:0, answerThree:"", submitThree:false}
       this.handleQuestionOne = this.handleQuestionOne.bind(this)
       this.handleSubmitOne = this.handleSubmitOne.bind(this)
       this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
@@ -22,11 +23,16 @@ class App extends Component {
 
   handleSubmitOne(){
     this.setState({submitOne: true})
+    console.log(this.state.markOne)
     console.log(this.state.submitOne)
+    getKeyPhrases(this.state.answerOne, this.state.solutionOne).then((result) => {
+        this.state.markOne = result
+    })
   }
 
   handleQuestionTwo(e){
     this.setState({answerTwo: e.target.value})
+    console.log(this.state.markOne)
     console.log(this.state.answerOne)
     console.log(this.state.submitOne)
     console.log(this.state.answerTwo)
@@ -36,6 +42,9 @@ class App extends Component {
   handleSubmitTwo(){
     this.setState({submitTwo: true})
     console.log(this.state.submitTwo)
+    getKeyPhrases(this.state.answerTwo, this.state.solutionTwo).then((result) => {
+        this.state.markTwo = result
+    })
   }
 
   handleQuestionThree(e){
@@ -67,14 +76,14 @@ class App extends Component {
           <div class = "welcome-body">
             <div class ="form-group">
               <div class = "row">
-                What is question one?
+                If given minimal instruction on a certain task, how would you proceed?
               </div>
               <div class = "row">
                 <div class ="col-10" style={{padding: "2%"}}>
                   <input class="form-control" id="answerOne" placeholder="Enter your answer here" onChange={this.handleQuestionOne} value={this.state.answerOne} style ={{padding: "1%"}} required/>
                 </div>
               </div>
-              <button id="submit-button" class="btn" onClick={this.handleSubmitOne} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
+              <button id="submit-button" class="btn" onClick={this.handleSubmitOne} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
             </div>
           </div>
         :
@@ -85,14 +94,14 @@ class App extends Component {
                   <div class ="form-group">
                     Success!
                       <div class = "row">
-                        What is question two?
+                        Tell me about a time you had to work with a colleague you did not get along with. What did you do?
                       </div>
                       <div class = "row">
                         <div class ="col-10" style={{padding: "2%"}}>
                           <input class="form-control" id="answerTwo" placeholder="Enter your answer here" onChange={this.handleQuestionTwo} value={this.state.answerTwo} style ={{padding: "1%"}} required/>
                         </div>
                       </div>
-                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitTwo} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
+                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitTwo} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
                   </div>
                 </div>
               </div>
@@ -109,7 +118,7 @@ class App extends Component {
                           <input class="form-control" id="answerThree" placeholder="Enter your answer here" onChange={this.handleQuestionThree} value={this.state.answerThree} style ={{padding: "1%"}} required/>
                         </div>
                       </div>
-                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitThree} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
+                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitThree} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
                   </div>
                 </div>
               </div>
