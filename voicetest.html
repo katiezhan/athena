@@ -14,6 +14,7 @@
     const recognition = new SpeechRecognition();
     recognition.interimResults = true;
     recognition.lang = 'en-US';
+    let finalTranscript = "";
     
     let p = document.createElement('p');
     const words = document.querySelector('.words');
@@ -24,22 +25,14 @@
         .map(result => result.transcript)
         .join('');
         p.textContent = transcript;
-        if (e.results[0].isFinal) {
-          p = document.createElement('p');
-          words.appendChild(p);
-        }
-
-        // Use the variable "transcript" for text analyzing
-
-        //Example:
-        //if (transcript.includes('hello')){
-        //  console.log("You said hello!");
-        //}
-        console.log("this is the transcript " + transcript);
+      if (e.results[0].isFinal) {
+        p = document.createElement('p');
+        words.appendChild(p);
+        finalTranscript = transcript;
+      }
     });
     recognition.addEventListener('end', recognition.start);
     recognition.start();
-    console.log("end of script");
   </script>
 
 
