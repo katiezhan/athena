@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase, { auth, provider } from './fire';
 import { getKeyPhrases } from './textapi';
-import { Chart } from "react-charts";
+import { Chart } from "react-google-charts";
 
 class App extends Component {
   constructor(props){
@@ -63,7 +63,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style = {{fontFamily: "Roboto"}}>
+      <div className="App" style = {{fontFamily: "Roboto", overflow: "hidden"}}>
         <div class="row" style={{"background-color": "#048D98", "height": "80%", "top":"0"}}>
           <div class="container col-md-2" style={{"padding": "1%", "color":"#ffffff", "font-family": "Roboto"}}>
             <img src="logobright.png" style={{"width":"12%", "height":"12%"}}/>
