@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase, { auth, provider } from './fire'
+import firebase, { auth, provider } from './fire';
+import { getKeyPhrases } from './textapi';
 
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false}
+    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0}
       this.handleQuestionOne = this.handleQuestionOne.bind(this)
       this.handleSubmitOne = this.handleSubmitOne.bind(this)
       this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
@@ -20,11 +21,16 @@ class App extends Component {
 
   handleSubmitOne(){
     this.setState({submitOne: true})
+    console.log(this.state.markOne)
     console.log(this.state.submitOne)
+    getKeyPhrases(this.state.answerOne, this.state.solutionOne).then((result) => {
+        this.state.markOne = result
+    })
   }
 
   handleQuestionTwo(e){
     this.setState({answerTwo: e.target.value})
+    console.log(this.state.markOne)
     console.log(this.state.answerOne)
     console.log(this.state.submitOne)
     console.log(this.state.answerTwo)
