@@ -26,6 +26,20 @@
   color: #61dafb;
 }
 
+.question {
+    padding: 30px;
+    padding-top: 40px;
+}
+
+.form-control {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.col-10 {
+    padding-bottom: 30px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

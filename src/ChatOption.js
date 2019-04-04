@@ -87,11 +87,11 @@ class ChatOption extends Component {
         {this.state.submitOne == false ?
           <div class = "welcome-body">
             <div class ="form-group">
-              <div class = "row">
+              <div class = "row question">
                 If given minimal instruction on a certain task, how would you proceed?
               </div>
               <div class = "row">
-                <div class ="col-10" style={{padding: "2%"}}>
+                <div class ="col-10">
                   <input class="form-control" id="answerOne" placeholder="Enter your answer here" onChange={this.handleQuestionOne} value={this.state.answerOne} style ={{padding: "1%"}} required/>
                 </div>
               </div>
@@ -104,11 +104,11 @@ class ChatOption extends Component {
               <div>
                 <div class = "welcome-body">
                   <div class ="form-group">
-                      <div class = "row">
+                      <div class = "row question">
                         Tell me about a time you had to work with a colleague you did not get along with. What did you do?
                       </div>
                       <div class = "row">
-                        <div class ="col-10" style={{padding: "2%"}}>
+                        <div class ="col-10">
                           <input class="form-control" id="answerTwo" placeholder="Enter your answer here" onChange={this.handleQuestionTwo} value={this.state.answerTwo} style ={{padding: "1%"}} required/>
                         </div>
                       </div>
@@ -122,11 +122,11 @@ class ChatOption extends Component {
                   <div>
                     <div class = "welcome-body">
                       <div class ="form-group">
-                          <div class = "row">
+                          <div class = "row question">
                             What are the three things that are most important to you in a job?
                           </div>
                           <div class = "row">
-                            <div class ="col-10" style={{padding: "2%"}}>
+                            <div class ="col-10">
                               <input class="form-control" id="answerThree" placeholder="Enter your answer here" onChange={this.handleQuestionThree} value={this.state.answerThree} style ={{padding: "1%"}} required/>
                             </div>
                           </div>
