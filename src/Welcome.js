@@ -16,11 +16,18 @@ class Welcome extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
-          <div>
-            <Route exact path="/ChatOption" component={chatoption}/>
-          </div> 
-        </BrowserRouter>  
+        <div class="row" style={{backgroundColor: "#048D98",  "top":"0"}}>
+          <div class="container col-md-2" style={{"padding": "2%", "color":"#ffffff", fontFamily: "Roboto"}}>
+            <img src="logobright.png" style={{"width":"12%", "height":"12%"}}/>
+              <div class="vertical-center" style={{fontSize: "25px"}}>
+                AthenaAI
+                <br/>
+                  <div style={{"font-size": "13px"}}>
+                    Student
+                  </div>
+              </div>
+          </div>
+        </div>
       </div>
     );
   }

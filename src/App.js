@@ -17,7 +17,6 @@ class App extends Component {
     const chatoption = (props) => {
       return (
         <ChatOption 
-          chatoptionbutton={this.state.chatoptionbutton}
         />
       );
     }
@@ -34,7 +33,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact path="/ChatOption" component={chatoption}/>
-            <Route exact path="/Welcome" component={welcome}/>
+            <Route exact path="/" component={welcome}/>
           </div> 
         </BrowserRouter>  
       </div>
