@@ -5,11 +5,13 @@ import firebase, { auth, provider } from './fire'
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false}
+    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, answerThree:"", submitThree:false}
       this.handleQuestionOne = this.handleQuestionOne.bind(this)
       this.handleSubmitOne = this.handleSubmitOne.bind(this)
       this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
       this.handleSubmitTwo = this.handleSubmitTwo.bind(this)
+      this.handleQuestionThree = this.handleQuestionThree.bind(this)
+      this.handleSubmitThree = this.handleSubmitThree.bind(this)
   }   
 
   handleQuestionOne(e){
@@ -34,6 +36,15 @@ class App extends Component {
   handleSubmitTwo(){
     this.setState({submitTwo: true})
     console.log(this.state.submitTwo)
+  }
+
+  handleQuestionThree(e){
+    this.setState({answerThree: e.target.value})
+    console.log(this.state.submitThree)
+  }
+
+  handleSubmitThree(){
+    this.setState({submitThree: true})
   }
 
 
@@ -67,21 +78,44 @@ class App extends Component {
             </div>
           </div>
         :
-            <div class = "welcome-body">
-              <div class ="form-group">
-                Success!
-                <div class = "row">
-                   What is question two?
+          <div>
+            {this.state.submitTwo == false ?
+              <div>
+                <div class = "welcome-body">
+                  <div class ="form-group">
+                    Success!
+                      <div class = "row">
+                        What is question two?
+                      </div>
+                      <div class = "row">
+                        <div class ="col-10" style={{padding: "2%"}}>
+                          <input class="form-control" id="answerTwo" placeholder="Enter your answer here" onChange={this.handleQuestionTwo} value={this.state.answerTwo} style ={{padding: "1%"}} required/>
+                        </div>
+                      </div>
+                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitTwo} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
+                  </div>
                 </div>
-               <div class = "row">
-                 <div class ="col-10" style={{padding: "2%"}}>
-                   <input class="form-control" id="answerOne" placeholder="Enter your answer here" onChange={this.handleQuestionTwo} value={this.state.answerTwo} style ={{padding: "1%"}} required/>
-                 </div>
-               </div>
-               <button id="submit-button-2" class="btn" onClick={this.handleSubmitTwo} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
-             </div>
-           </div>
-        } 
+              </div>
+            :
+              <div>
+                <div class = "welcome-body">
+                  <div class ="form-group">
+                    Success!
+                      <div class = "row">
+                        What is question three?
+                      </div>
+                      <div class = "row">
+                        <div class ="col-10" style={{padding: "2%"}}>
+                          <input class="form-control" id="answerThree" placeholder="Enter your answer here" onChange={this.handleQuestionThree} value={this.state.answerThree} style ={{padding: "1%"}} required/>
+                        </div>
+                      </div>
+                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitThree} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }
       </div>
     );
   }
