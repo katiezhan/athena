@@ -107,20 +107,32 @@ class App extends Component {
               </div>
             :
               <div>
-                <div class = "welcome-body">
-                  <div class ="form-group">
-                    Success!
-                      <div class = "row">
-                        What is question three?
+                {this.state.submitThree == false ?
+                  <div>
+                    <div class = "welcome-body">
+                      <div class ="form-group">
+                        Success!
+                          <div class = "row">
+                            What is question three?
+                          </div>
+                          <div class = "row">
+                            <div class ="col-10" style={{padding: "2%"}}>
+                              <input class="form-control" id="answerThree" placeholder="Enter your answer here" onChange={this.handleQuestionThree} value={this.state.answerThree} style ={{padding: "1%"}} required/>
+                            </div>
+                          </div>
+                          <button id="submit-button-2" class="btn" onClick={this.handleSubmitThree} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
                       </div>
-                      <div class = "row">
-                        <div class ="col-10" style={{padding: "2%"}}>
-                          <input class="form-control" id="answerThree" placeholder="Enter your answer here" onChange={this.handleQuestionThree} value={this.state.answerThree} style ={{padding: "1%"}} required/>
-                        </div>
-                      </div>
-                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitThree} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
+                    </div>
                   </div>
-                </div>
+
+                :
+
+                  <div>
+                    Thank you! 
+                    Here are your results:
+                  </div>
+
+                }
               </div>
             }
           </div>
