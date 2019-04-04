@@ -142,15 +142,15 @@ class ChatOption extends Component {
                     <div>
                       <div class = "welcome-body">
                         <div class = "form-group">
-                          <div class = "row">
+                          <div class = "row confirm" style={{paddingTop: "30px"}}>
                             Your Answer for Question 1: {" "}
                             {this.state.answerOne}
                           </div>
-                          <div class = "row">
+                          <div class = "row confirm">
                             Your Answer for Question 2: {" "} 
                             {this.state.answerTwo}
                           </div>
-                          <div class = "row">
+                          <div class = "row confirm">
                             Your Answer for Question 3: {" "}
                             {this.state.answerThree}
                           </div>

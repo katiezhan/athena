@@ -40,6 +40,10 @@
     padding-bottom: 30px;
 }
 
+.confirm {
+    padding-bottom: 30px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
