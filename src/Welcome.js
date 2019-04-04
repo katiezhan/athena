@@ -14,14 +14,6 @@ class Welcome extends Component {
   }   
 
   render() {
-    const chatoption = (props) => {
-      return (
-        <ChatOption 
-          chatoptionbutton={this.state.chatoptionbutton}
-        />
-      );
-    }
-
     return (
       <div>
         <BrowserRouter>
