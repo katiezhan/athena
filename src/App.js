@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase, { auth, provider } from './fire'
+import firebase, { auth, provider } from './fire';
+import { getKeyPhrases } from './textapi';
+import { Chart } from "react-charts";
 
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false}
+    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0, solutionTwo:["civil", "respect", "open-minded"], markTwo:0, answerThree:"", submitThree:false, solutionThree:["challenging", "learning", "culture", "environment", "salary", "impact"], markThree:0}
       this.handleQuestionOne = this.handleQuestionOne.bind(this)
       this.handleSubmitOne = this.handleSubmitOne.bind(this)
       this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
       this.handleSubmitTwo = this.handleSubmitTwo.bind(this)
+      this.handleQuestionThree = this.handleQuestionThree.bind(this)
+      this.handleSubmitThree = this.handleSubmitThree.bind(this)
   }   
 
   handleQuestionOne(e){
@@ -20,11 +24,16 @@ class App extends Component {
 
   handleSubmitOne(){
     this.setState({submitOne: true})
+    console.log(this.state.markOne)
     console.log(this.state.submitOne)
+    getKeyPhrases(this.state.answerOne, this.state.solutionOne).then((result) => {
+        this.state.markOne = result
+    })
   }
 
   handleQuestionTwo(e){
     this.setState({answerTwo: e.target.value})
+    console.log(this.state.markOne)
     console.log(this.state.answerOne)
     console.log(this.state.submitOne)
     console.log(this.state.answerTwo)
@@ -34,6 +43,21 @@ class App extends Component {
   handleSubmitTwo(){
     this.setState({submitTwo: true})
     console.log(this.state.submitTwo)
+    getKeyPhrases(this.state.answerTwo, this.state.solutionTwo).then((result) => {
+        this.state.markTwo = result
+    })
+  }
+
+  handleQuestionThree(e){
+    this.setState({answerThree: e.target.value})
+    console.log(this.state.submitThree)
+  }
+
+  handleSubmitThree(){
+    this.setState({submitThree: true})
+    getKeyPhrases(this.state.answerThree, this.state.solutionThree).then((result) => {
+        this.state.markThree = result
+    })
   }
 
 
@@ -54,34 +78,89 @@ class App extends Component {
         </div>
         {this.state.submitOne == false ?
           <div class = "welcome-body">
+          <Chart
+            data={[
+              {
+                label: "Series 1",
+                data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
+              },
+              {
+                label: "Series 2",
+                data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
+              }
+            ]}
+            axes={[
+              { primary: true, type: "linear", position: "bottom" },
+              { type: "linear", position: "left" }
+            ]}
+            style={{
+              width: "400px",
+              height: "300px"
+            }}
+            />
+          
             <div class ="form-group">
               <div class = "row">
-                What is question one?
+                If given minimal instruction on a certain task, how would you proceed?
               </div>
               <div class = "row">
                 <div class ="col-10" style={{padding: "2%"}}>
                   <input class="form-control" id="answerOne" placeholder="Enter your answer here" onChange={this.handleQuestionOne} value={this.state.answerOne} style ={{padding: "1%"}} required/>
                 </div>
               </div>
-              <button id="submit-button" class="btn" onClick={this.handleSubmitOne} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
+              <button id="submit-button" class="btn" onClick={this.handleSubmitOne} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
             </div>
           </div>
         :
-            <div class = "welcome-body">
-              <div class ="form-group">
-                Success!
-                <div class = "row">
-                   What is question two?
+          <div>
+            {this.state.submitTwo == false ?
+              <div>
+                <div class = "welcome-body">
+                  <div class ="form-group">
+                    Success!
+                      <div class = "row">
+                        Tell me about a time you had to work with a colleague you did not get along with. What did you do?
+                      </div>
+                      <div class = "row">
+                        <div class ="col-10" style={{padding: "2%"}}>
+                          <input class="form-control" id="answerTwo" placeholder="Enter your answer here" onChange={this.handleQuestionTwo} value={this.state.answerTwo} style ={{padding: "1%"}} required/>
+                        </div>
+                      </div>
+                      <button id="submit-button-2" class="btn" onClick={this.handleSubmitTwo} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
+                  </div>
                 </div>
-               <div class = "row">
-                 <div class ="col-10" style={{padding: "2%"}}>
-                   <input class="form-control" id="answerOne" placeholder="Enter your answer here" onChange={this.handleQuestionTwo} value={this.state.answerTwo} style ={{padding: "1%"}} required/>
-                 </div>
-               </div>
-               <button id="submit-button-2" class="btn" onClick={this.handleSubmitTwo} style={{align: 'center', color: "#048D98"}} type="submit">Next</button>
-             </div>
-           </div>
-        } 
+              </div>
+            :
+              <div>
+                {this.state.submitThree == false ?
+                  <div>
+                    <div class = "welcome-body">
+                      <div class ="form-group">
+                        Success!
+                          <div class = "row">
+                            What are the three things that are most important to you in a job?
+                          </div>
+                          <div class = "row">
+                            <div class ="col-10" style={{padding: "2%"}}>
+                              <input class="form-control" id="answerThree" placeholder="Enter your answer here" onChange={this.handleQuestionThree} value={this.state.answerThree} style ={{padding: "1%"}} required/>
+                            </div>
+                          </div>
+                          <button id="submit-button-2" class="btn" onClick={this.handleSubmitThree} style={{align: 'center', color: "#048D98"}} type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+
+                :
+
+                  <div>
+                    Thank you! 
+                    Here are your results:
+                  </div>
+                 }
+              </div>
+            }
+          </div>
+        }
       </div>
     );
   }
