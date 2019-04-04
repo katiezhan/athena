@@ -134,8 +134,7 @@ class App extends Component {
                     Thank you! 
                     Here are your results:
                   </div>
-
-                }
+                 }
               </div>
             }
           </div>
