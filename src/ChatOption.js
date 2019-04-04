@@ -10,7 +10,7 @@ import App from "./App.js"
 class ChatOption extends Component {
   constructor(props){
     super(props)
-    this.state = {finishButton:false, answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0, solutionTwo:["respect", "open-minded"], markTwo:0, answerThree:"", submitThree:false, solutionThree:["learning", "culture", "environment", "salary", "impact"], markThree:0}
+    this.state = {finishButton:false, answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0, solutionTwo:["respect", "civil", "open-minded", "nice", "discussions"], markTwo:0, answerThree:"", submitThree:false, solutionThree:["learning", "culture", "environment", "salary", "impact"], markThree:0}
       this.handleQuestionOne = this.handleQuestionOne.bind(this)
       this.handleSubmitOne = this.handleSubmitOne.bind(this)
       this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
