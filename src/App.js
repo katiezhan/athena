@@ -63,7 +63,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style = {{fontFamily: "Roboto", overflow: "hidden"}}>
+      <div className="App" style = {{fontFamily: "Roboto", overflowX: "hidden"}}>
         <div class="row" style={{"background-color": "#048D98", "height": "80%", "top":"0"}}>
           <div class="container col-md-2" style={{"padding": "1%", "color":"#ffffff", "font-family": "Roboto"}}>
             <img src="logobright.png" style={{"width":"12%", "height":"12%"}}/>
@@ -78,7 +78,6 @@ class App extends Component {
         </div>
         {this.state.submitOne == false ?
           <div class = "welcome-body">
-          
             <div class ="form-group">
               <div class = "row">
                 If given minimal instruction on a certain task, how would you proceed?
