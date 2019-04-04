@@ -28,7 +28,11 @@
 
 .question {
     padding: 30px;
-    padding-top: 40px;
+}
+
+.header {
+    padding-top: 30px;
+    font-weight: 1000;
 }
 
 .form-control {

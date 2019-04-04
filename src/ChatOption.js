@@ -87,6 +87,9 @@ class ChatOption extends Component {
         {this.state.submitOne == false ?
           <div class = "welcome-body">
             <div class ="form-group">
+              <div class = "row header">
+                Question 1:
+              </div>
               <div class = "row question">
                 If given minimal instruction on a certain task, how would you proceed?
               </div>
@@ -104,6 +107,9 @@ class ChatOption extends Component {
               <div>
                 <div class = "welcome-body">
                   <div class ="form-group">
+                      <div class = "row header">
+                        Question 2:
+                      </div>
                       <div class = "row question">
                         Tell me about a time you had to work with a colleague you did not get along with. What did you do?
                       </div>
@@ -122,6 +128,9 @@ class ChatOption extends Component {
                   <div>
                     <div class = "welcome-body">
                       <div class ="form-group">
+                          <div class = "row header">
+                            Question 3:
+                          </div>
                           <div class = "row question">
                             What are the three things that are most important to you in a job?
                           </div>
@@ -142,6 +151,9 @@ class ChatOption extends Component {
                     <div>
                       <div class = "welcome-body">
                         <div class = "form-group">
+                          <div class = "row header">
+                            Summary:
+                          </div>
                           <div class = "row confirm" style={{paddingTop: "30px"}}>
                             Your Answer for Question 1: {" "}
                             {this.state.answerOne}
@@ -160,8 +172,10 @@ class ChatOption extends Component {
                      </div>
                    :
                       <div>
-                        Thank you! 
-                        Here are your results:
+                        <div class="row header" style={{paddingBottom:"30px"}}>
+                          Thank you! 
+                          Here are your results:
+                        </div>
                         <Chart
                           width={'500px'}
                           height={'300px'}
