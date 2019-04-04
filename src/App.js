@@ -6,7 +6,7 @@ import { getKeyPhrases } from './textapi';
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0, solutionTwo:["civil", "respect", "open-minded"], markTwo:0, answerThree:"", submitThree:false}
+    this.state = {answerOne:"", submitOne:false, answerTwo:"", submitTwo: false, solutionOne:["ask", "research", "google"], markOne:0, solutionTwo:["civil", "respect", "open-minded"], markTwo:0, answerThree:"", submitThree:false, solutionThree:["challenging", "learning", "culture", "environment", "salary", "impact"], markThree:0}
       this.handleQuestionOne = this.handleQuestionOne.bind(this)
       this.handleSubmitOne = this.handleSubmitOne.bind(this)
       this.handleQuestionTwo = this.handleQuestionTwo.bind(this)
@@ -54,6 +54,9 @@ class App extends Component {
 
   handleSubmitThree(){
     this.setState({submitThree: true})
+    getKeyPhrases(this.state.answerThree, this.state.solutionThree).then((result) => {
+        this.state.markThree = result
+    })
   }
 
 
