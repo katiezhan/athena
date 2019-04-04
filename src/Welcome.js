@@ -5,9 +5,9 @@ import { getKeyPhrases } from './textapi';
 import { Chart } from "react-google-charts";
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import ChatOption from './ChatOption.js';
-import Welcome from './Welcome.js';
+import App from './App.js';
 
-class App extends Component {
+class Welcome extends Component {
   constructor(props){
     super(props)
     this.state = {chatoptionbutton: ""}
@@ -22,19 +22,11 @@ class App extends Component {
       );
     }
 
-    const welcome = (props) => {
-      return (
-        <Welcome
-        />
-      );
-    }
-
     return (
       <div>
         <BrowserRouter>
           <div>
             <Route exact path="/ChatOption" component={chatoption}/>
-            <Route exact path="/Welcome" component={welcome}/>
           </div> 
         </BrowserRouter>  
       </div>
@@ -42,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Welcome;
