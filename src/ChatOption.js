@@ -176,6 +176,7 @@ class ChatOption extends Component {
                           Thank you! 
                           Here are your results:
                         </div>
+                        <div class="graph">
                         <Chart
                           width={'500px'}
                           height={'300px'}
@@ -208,6 +209,7 @@ class ChatOption extends Component {
                           // For tests
                           rootProps={{ 'data-testid': '6' }}
                         />
+                        </div>
                       </div>
                     }
                     </div>

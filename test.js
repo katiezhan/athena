@@ -20,6 +20,9 @@ async function getKeyPhrases(sentence, answer) {
             score++;
         }
     }
+    score /= answer.length;
+    console.log(keyPhrases);
+    console.log(score);
     return score;
 }
 
@@ -56,4 +59,4 @@ function get_key_phrases(documents) {
     });
 }
 
-getKeyPhrases("i like to volunteer at charity in my free time and help the youth.", ["charity", "school"]);
+getKeyPhrases("with respect", ["open-minded", "respect", "nice", "civil", "discussion"]);
