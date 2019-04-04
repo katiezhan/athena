@@ -64,7 +64,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" style = {{fontFamily: "Roboto", overflowX: "hidden"}}>
-        <div class="row" style={{"background-color": "#048D98", "height": "80%", "top":"0"}}>
+        <div class="row" style={{"background-color": "#048D98",  "top":"0"}}>
           <div class="container col-md-2" style={{"padding": "1%", "color":"#ffffff", "font-family": "Roboto"}}>
             <img src="logobright.png" style={{"width":"12%", "height":"12%"}}/>
               <div class="vertical-center" style={{"font-size": "25px"}}>
@@ -134,6 +134,38 @@ class App extends Component {
                   <div>
                     Thank you! 
                     Here are your results:
+                    <Chart
+                      width={'500px'}
+                      height={'300px'}
+                      chartType="BarChart"
+                      loader={<div>Loading Chart</div>}
+                      data={[
+                        [
+                          'Element',
+                          'Density',
+                          { role: 'style' },
+                          {
+                            sourceColumn: 0,
+                            role: 'annotation',
+                            type: 'string',
+                            calc: 'stringify',
+                          },
+                        ],
+                        ['Copper', 8.94, '#b87333', null],
+                        ['Silver', 10.49, 'silver', null],
+                        ['Gold', 19.3, 'gold', null],
+                        ['Platinum', 21.45, 'color: #e5e4e2', null],
+                      ]}
+                      options={{
+                        title: 'Density of Precious Metals, in g/cm^3',
+                        width: 600,
+                        height: 400,
+                        bar: { groupWidth: '95%' },
+                        legend: { position: 'none' },
+                      }}
+                      // For tests
+                      rootProps={{ 'data-testid': '6' }}
+                    />
                   </div>
                  }
               </div>
